@@ -3,33 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portal Gudang</title>
+<meta name="theme-color" content="#176b4a">
+<title>Portal Sistem Gudang</title>
 <style>
+  :root {
+    --bg: #eaf1ed; --card: #fff; --ink: #003a3e; --muted: #6b7b74; --line: #d5dfda;
+    --green: #1d8290; --green-soft: #e2f2e8; --dark: #124e47;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
   body {
-    background: #eaf1ed; color: #003a3e;
-    font-family: system-ui, -apple-system, sans-serif;
-    padding: 20px 16px; display: flex; flex-direction: column; align-items: center;
+    background: var(--bg); color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    padding: 30px 16px 50px; display: flex; flex-direction: column; align-items: center; gap: 20px;
   }
-  .card { width: 100%; max-width: 400px; background: #fff; border-radius: 24px; padding: 24px; box-shadow: 0 8px 28px rgba(0,0,0,.08); text-align: center; }
-  h1 { margin-bottom: 24px; font-size: 24px; }
-  .menu-btn {
-    display: block; width: 100%; padding: 18px; margin-bottom: 12px;
-    background: #1d8290; color: #fff; text-decoration: none;
-    font-weight: 800; font-size: 16px; border-radius: 16px; text-transform: uppercase;
+  .card {
+    width: 100%; max-width: 480px; background: var(--card);
+    border-radius: 24px; padding: 28px 24px;
+    box-shadow: 0 8px 28px rgba(15, 59, 46, .08); text-align: center;
   }
-  .menu-btn:active { transform: scale(.98); }
+  .logo-icon {
+    width: 64px; height: 64px; background: var(--green-soft); color: var(--green);
+    border-radius: 20px; display: inline-flex; align-items: center; justify-content: center;
+    font-size: 32px; font-weight: 800; margin-bottom: 12px;
+  }
+  h1 { margin: 0; font-size: 26px; letter-spacing: .2px; }
+  .sub { margin: 4px 0 24px; color: var(--muted); font-size: 15px; }
+
+  .menu-grid { display: flex; flex-direction: column; gap: 14px; }
+  .menu-card {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 20px; background: #fff; border: 2px solid var(--line);
+    border-radius: 18px; text-decoration: none; color: var(--ink);
+    transition: all .15s ease;
+  }
+  .menu-card:active { transform: scale(.98); border-color: var(--green); background: var(--green-soft); }
+  .menu-info { text-align: left; }
+  .menu-title { display: block; font-size: 18px; font-weight: 800; }
+  .menu-desc { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .menu-arrow { font-size: 20px; font-weight: 800; color: var(--green); }
+
+  footer { margin-top: 10px; font-size: 13px; color: var(--muted); }
 </style>
 </head>
 <body>
 
 <div class="card">
-  <h1>SYSTEM SCAN GUDANG</h1>
-  <a href="finishing.html" class="menu-btn">Scan Finishing</a>
-  <a href="retur.html" class="menu-btn">Scan Retur</a>
-  <a href="repeat NR.html" class="menu-btn">Scan Repeat Normal</a>
-  <a href="repeat OB.html" class="menu-btn">Scan Repeat OB</a>
-  <a href="mutasi.html" class="menu-btn">Scan Mutasi</a>
+  <div class="logo-icon">📦</div>
+  <h1>PORTAL GUDANG</h1>
+  <p class="sub">Pilih modul pencatatan barcode barang</p>
+
+  <div class="menu-grid">
+    <a href="finishing.html" class="menu-card">
+      <div class="menu-info">
+        <span class="menu-title">FINISHING GUDANG</span>
+        <span class="menu-desc">Scan barcode invoice, rak & barang finishing</span>
+      </div>
+      <span class="menu-arrow">➔</span>
+    </a>
+
+    <a href="retur.html" class="menu-card">
+      <div class="menu-info">
+        <span class="menu-title">SCAN RETUR</span>
+        <span class="menu-desc">Pencatatan barang retur toko / customer</span>
+      </div>
+      <span class="menu-arrow">➔</span>
+    </a>
+
+    <a href="repeat NR.html" class="menu-card">
+      <div class="menu-info">
+        <span class="menu-title">SCAN REPEAT NR</span>
+        <span class="menu-desc">Pencatatan barang repeat order (Normal)</span>
+      </div>
+      <span class="menu-arrow">➔</span>
+    </a>
+
+    <a href="repeat OB.html" class="menu-card">
+        <div class="menu-info">
+          <span class="menu-title">SCAN REPEAT OB</span>
+          <span class="menu-desc">Pencatatan barang repeat order (OB)</span>
+        </div>
+        <span class="menu-arrow">➔</span>
+      </a>
+  
+
+    <a href="mutasi.html" class="menu-card">
+      <div class="menu-info">
+        <span class="menu-title">SCAN MUTASI</span>
+        <span class="menu-desc">Pindah lokasi / perpindahan stok gudang</span>
+      </div>
+      <span class="menu-arrow">➔</span>
+    </a>
+  </div>
 </div>
+
+<footer>&copy; System Scanner Gudang (By : Juni_VM)</footer>
 
 </body>
 </html>
